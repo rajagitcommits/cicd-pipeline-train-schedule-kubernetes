@@ -13,6 +13,8 @@ pipeline {
             }
         }
         stage('Build Docker Image') {
+            sh 'echo branch'
+            
             when {
                 branch 'master'
             }
