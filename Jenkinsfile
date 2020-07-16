@@ -10,10 +10,11 @@ pipeline {
                 echo 'Running build automation'
                 sh './gradlew build --no-daemon'
                 archiveArtifacts artifacts: 'dist/trainSchedule.zip'
+                sh 'echo branch'
             }
         }
         stage('Build Docker Image') {
-            sh 'echo branch'
+          
             
             when {
                 branch 'master'
